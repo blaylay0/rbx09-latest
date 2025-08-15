@@ -262,7 +262,6 @@ if($ipBanned) {
 }
 if ($auth) {
 $q = $con->prepare("SELECT * FROM messages WHERE readto = '0' AND user_to = :userId AND deleteto = '0'");
-$q->bindParam(':userId', $_USER['id'], PDO::PARAM_INT);
 $q->execute();
 $unreadmsg = $q->rowCount();
     if ($_USER['next_tix_reward'] < time()) {
